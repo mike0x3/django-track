@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'main/stylesheet/style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<title>PyPost</title>
+</head>
+<body>
+	<header>
+		<div class="header-logo">
+			<h1><span class="yellow">Py</span>Post</h1>
+		</div>
+		<div class="right-header">
+			<ul>
+				<a href="#"><li>Come si fa?</li></a>
+				<a href="#"><li>Help</li></a>
+				<a href="#"><li>Contact us</li></a>
+			</ul>
+		</div>
+	</header>
+	<div class="container">
+	{% block content %}
+	{% endblock %}
+	</div>
+	<footer>
+		<h4>©Copyright 2021 PyTrack by <a href="#">mike</a> Rights Reserved <span class="social"><a href="#"><img src="{% static 'main/images/github.svg' %}" alt="github" width="18"></a><a href="#"><img src="{% static 'main/images/instagram.svg' %}" alt="instagram" width="18"></a><a href="#"><img src="{% static 'main/images/email.svg' %}" alt="email" width="18"></a></span></h4>
+	</footer>
+	
+</body>
+</html>

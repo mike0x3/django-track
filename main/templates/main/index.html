@@ -1,0 +1,124 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+	
+<div class="image-background">
+	<section class="search">
+		<div class="logo logo-big">
+			<h1><span class="yellow">Py</span>Post</h1>
+			<h4>Abbiamo tracciato 1,434,543 pacchi</h4>
+		</div> 
+		{% if code %}
+			<h4>Stato: {{ stato }}</h4>
+			<h4>Dettagli:</h4>
+			{% for el in dettagli %}
+				{{ el.datetime }}
+				{{ el.description }}
+				{{ el.message }}
+				{{ el.status }}
+				{{ el.tracking_location }}
+				{{ el.datetime }}
+			{% endfor %}		
+			<h4>Data_consegna: {{ data_consegna }}</h4>
+			<style>
+				.form{ display:none;}
+			</style>
+
+		{% endif %}
+		<div class="form">
+			<form action="/track">
+				{% csrf_token %}
+				{{ form.code }}
+				<button type="submit"><img src="{% static 'main/images/search.svg' %}" alt="cerca"></button>
+			</form>
+		</div>
+	</section>
+</div>
+		<section class="corriers">
+			<h2>WE TRACK BEST E-COMMERCE CARRIERS</h2>
+			<h4>Designate corresponding carrier to get more complete and accurate tracking information</h4>
+			<div class="grid">
+				<div class="card card1">
+					<h1>sda</h1>
+					<div class="card-hover">
+						<h2>SDA</h2>
+						<a href="#">Traccia</a>
+					</div>
+				</div>
+				<div class="card card1"><h1>brt</h1></div>
+				<div class="card card1"><h1>dhl</h1></div>
+			</div>
+			<div class="grid">
+				<div class="card card2"><h1>sda</h1></div>
+				<div class="card card2"><h1>sda</h1></div>
+				<div class="card card2"><h1>sda</h1></div>
+				<div class="card card2"><h1>sda</h1></div>
+			</div>
+			<div class="grid">
+				<div class="card card3"><h1>sda</h1></div>
+				<div class="card card3"><h1>sda</h1></div>
+				<div class="card card3"><h1>sda</h1></div>
+				<div class="card card3"><h1>sda</h1></div>
+				<div class="card card3"><h1>sda</h1></div>
+				<div class="card card3"><h1>sda</h1></div>
+			</div>
+			<a href="#" class="button-viewall">Vedi tutto >></a>
+		</section>
+		<section class="info">
+			<h2>WHAT WE DO</h2>
+			<h4>Provide accurate and rapid tracking services based on the intelligent big data analytics</h4>
+			<div class="flip-cards">
+				<div class="flip-card">
+					<div class="flip-card-inner">
+                        <div class="flip-card-front">
+                        	<img src="{% static 'main/images/technology.svg' %}" alt="technology" width="70">
+                            <h3>INTEGRATE</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Started from dozens of postal carrier and integrated hundreds of cross-border logistics providers. Expanding into world largest tracking service platform</p>
+                        </div>
+                    </div>
+				</div>
+				<div class="flip-card">
+					<div class="flip-card-inner">
+                        <div class="flip-card-front">
+                        	<img src="{% static 'main/images/mechanic.svg' %}" alt="mechanic" width="70">
+                            <h3>SUPPORT</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Though 17TRACK comes free for use, we still devote ourselves into providing the most professional user support to help our newly users</p>
+                        </div>
+                    </div>
+				</div>
+				<div class="flip-card">
+					<div class="flip-card-inner">
+                        <div class="flip-card-front">
+                        	<img src="{% static 'main/images/airpods.svg' %}" alt="airpods" width="70">
+                            <h3>ACCELERATE</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>All along, we are constantly making improvements and adjusting our website just for saving up your tracking consuming time</p>
+                        </div>
+                    </div>
+				</div>
+				<div class="flip-card">
+					<div class="flip-card-inner">
+                        <div class="flip-card-front">
+                        	<img src="{% static 'main/images/attach.svg' %}" alt="attach" width="70">
+                            <h3>SHARE</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Our global coverage range is about 98.99% and we track over 15 million numbers monthly. We share large data of global e-commerce logistics trends & insights</p>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<a href="#" class="button-viewall">Vedi tutto >></a>
+		</section>
+		<section class="try">
+			<h2>TRY IT NOW IT'S FREE</h2>
+			<h4>We offer the best service completely free</h4>
+			<a href="#" class="try-button">Try Now!</a>
+
+		</section>
+{% endblock %}
